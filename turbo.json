@@ -1,5 +1,11 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "NEXT_PUBLIC_CATS_API_TOKEN",
+    "NEXT_PUBLIC_CATS_API_BASE_URL",
+    "NEXT_PUBLIC_CATS_API_ITEMS_PER_PAGE",
+    "NEXT_PUBLIC_CATS_API_STOP_AFTER_PAGE"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -8,6 +14,9 @@
     },
     "lint": {},
     "type-check": {},
+    "start": {
+      "dependsOn": ["^build"]
+    },
     "dev": {
       "cache": false,
       "persistent": true
