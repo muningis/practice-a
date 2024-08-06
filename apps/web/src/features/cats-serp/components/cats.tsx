@@ -39,8 +39,8 @@ export const Cats = memo(function Cats() {
     }
     if (hasNextPage && !isFetchingNextPage) {
       fetchNextPage()
-        // eslint-disable-next-line no-console -- print out error
         .catch((err) => {
+          // eslint-disable-next-line no-console -- print out error
           console.error(err);
         });
     }
@@ -75,10 +75,10 @@ export const Cats = memo(function Cats() {
           ))}
           {isFetchingNextPage
             ? Array.from({ length: itemsPerPage }).map((_, index) => (
-                <Card key={`placeholder-${index}`} title="">
-                  <div className="bg-gray-200 h-48 rounded-lg animate-pulse" />
-                </Card>
-              ))
+              <Card key={`placeholder-${index}`} title="">
+                <div className="bg-gray-200 h-48 rounded-lg animate-pulse" />
+              </Card>
+            ))
             : null}
         </div>
       </InfiniteScroll>
